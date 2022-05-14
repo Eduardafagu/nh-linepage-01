@@ -1,0 +1,121 @@
+:root {
+  --primary: rgba(202, 197, 176, 0.4);
+  --primary-aux: rgb(204, 156, 24);
+  --secondary: hsl(0, 12%, 93%);
+  --secondary-aux: rgb(212, 196, 44);
+  --light: rgb(243, 241, 241);
+  --light-aux: rgb(206, 137, 48);
+  --dark: rgb(151, 92, 14);
+  --dark-aux: rgb(8, 7, 7);
+  --font-primary: 'Dancing Script', cursive;
+}
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  background: var(--light);
+  font-family: var(--font-primary);
+}
+
+header {
+  padding: 1rem 2rem;
+  background: rgb(226, 168, 9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > figure {
+  max-height: 3rem;
+}
+
+header > figure > img {
+  max-height: 3rem;
+}
+
+nav {
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav > a {
+  padding: 2rem 1rem;
+  border-radius: .25rem;
+  background: var(--primary);
+  color:var(--dark-aux);
+  font-size: 1rem;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+section.full-height {
+  min-height: 100vh;
+}
+section.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light);
+  background-image: url(/images/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section.welcome > .welcome-message {
+  max-width: 40vw;
+  flex: 1;
+  display: flex;
+  flex-direction:  column;
+  padding: 1rem;
+}
+section.welcome > .welcome-message > h1 {
+  font-size: 3rem;
+  color: var(--dark);
+  text-align: center;
+}
+
+section.welcome > .welcome-message > h3 {
+  font-size: 1.5rem;
+  color: var(--dark-aux);
+  margin-top: 1rem;
+  text-align: center;
+}
+section.welcome > .welcome-message > a {
+  width: 80%;
+  height: 3rem;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary);
+  color: var(--dark);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0.16);
+}
+
+section.welcome > .welcome-figure {
+  flex: 1;
+  max-width: 40vw;
+  align-self: flex-end;
+}
+
+
+
+section.welcome > .welcome-figure > img {
+  max-height: 100%;
+  max-width: 100%;
+}
