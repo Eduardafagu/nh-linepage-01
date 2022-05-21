@@ -7,7 +7,8 @@
   --light-aux: rgb(206, 137, 48);
   --dark: rgb(151, 92, 14);
   --dark-aux: rgb(8, 7, 7);
-  --font-primary: 'Dancing Script', cursive;
+  --font-primary: "Dancing Script", cursive;
+  --shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 * {
@@ -17,7 +18,8 @@
   text-decoration: none;
 }
 
-html, body {
+html,
+body {
   min-height: 100vh;
 }
 
@@ -51,9 +53,9 @@ nav {
 
 nav > a {
   padding: 2rem 1rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   background: var(--primary);
-  color:var(--dark-aux);
+  color: var(--dark-aux);
   font-size: 1rem;
   display: inline-block;
   text-transform: capitalize;
@@ -77,8 +79,12 @@ section.welcome > .welcome-message {
   max-width: 40vw;
   flex: 1;
   display: flex;
-  flex-direction:  column;
+  flex-direction: column;
   padding: 1rem;
+  align-items: center;
+  background: var(--light);
+  border-radius: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0.16);
 }
 section.welcome > .welcome-message > h1 {
   font-size: 3rem;
@@ -104,7 +110,7 @@ section.welcome > .welcome-message > a {
   font-size: 1.5rem;
   text-transform: uppercase;
   border-radius: 0.25rem;
-  box-shadow: 0 3px 6px rgba(0, 0, 0.16);
+  box-shadow: var(--box-shadow);
 }
 
 section.welcome > .welcome-figure {
@@ -113,9 +119,165 @@ section.welcome > .welcome-figure {
   align-self: flex-end;
 }
 
-
-
 section.welcome > .welcome-figure > img {
   max-height: 100%;
   max-width: 100%;
+}
+
+section.show-case {
+  background: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.show-case > h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--light-aux);
+}
+
+section.show-case > .cards-wrappers {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+section.show-case > .cards-wrappers > .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--light);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+section.show-case > .cards-wrappers > .card::before,
+section.show-case > .cards-wrappers > .card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--primary);
+
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+section.show-case > .cards-wrappers > .card::before {
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+
+section.show-case > .cards-wrappers > .card::after {
+  background: var(--light);
+}
+
+section.show-case > .cards-wrappers > .card > * {
+  z-index: 2;
+}
+section.show-case strong {
+  text-align: center;
+}
+
+section.show-case figure {
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+section.show-case figure > img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+section.show-case .card-detail {
+  text-align: justify;
+  max-width: 20rem;
+  padding: 00.5rem;
+  color: var(--dark-aux);
+}
+
+section.show-case .card-detail > p + p {
+  margin-top: 0.5rem;
+}
+
+section.about-us {
+  background: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section.about-us > h2 {
+  font-size: 3rem;
+}
+
+section.about-us > .about-info {
+  margin-top: 5rem;
+  padding: 2rem;
+  color: var(--dark-aux);
+  max-width: 60%;
+}
+
+section.about-info > .about-info > p {
+  padding: 0.5rem;
+  font-size: 1.25rem;
+}
+
+section.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--dark);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+section.social > h2 {
+  color: var(--light-aux);
+  font-size: 3rem;
+}
+
+section.social > .social-wrapper {
+  flex: 1;
+  display: flex;
+  width: 100%;
+}
+
+section.social .social-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: var(--light);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 150ms, 
+  backgroud-color 250ms,
+  transform 300ms;
+}
+
+section.social .social-item:hover {
+  opacity: 1;
+  transform: skewX(10deg) scale(1.25);
+  background: var(--primary);
+  transition-delay: 0ms;
+}
+
+footer {
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: var(--dark)
 }
